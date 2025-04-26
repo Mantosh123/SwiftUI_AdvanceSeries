@@ -12,9 +12,7 @@ class NetworkManager: ObservableObject {
     @Published var name: String? = ""
     @Published var type: String? = ""
     
-    
-    func networkCall() {
-        print("name: \(name ?? "N/A")")
+    func updateNetworkCall() {
+        name = "Mantosh iPhone8"
     }
-    
 }

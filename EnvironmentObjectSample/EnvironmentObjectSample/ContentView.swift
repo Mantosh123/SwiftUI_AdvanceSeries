@@ -16,8 +16,17 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            
+            ///networkManager.updateNetworkCall()
             Text(networkManager.name ?? "s/s")
+            
+            Button("go next") {
+                
+            }
         }
+        .onAppear(
+            
+        )
         .padding()
     }
 }
