@@ -9,10 +9,14 @@ import Foundation
 
 class NetworkManager: ObservableObject {
     
-    @Published var name: String? = ""
+    @Published var name: String? = "Mantosh Kumar"
     @Published var type: String? = ""
     
+    init() {
+        updateNetworkCall()
+    }
+    
     func updateNetworkCall() {
-        name = "Mantosh iPhone8"
+        type = "iPhone8"
     }
 }
