@@ -17,12 +17,12 @@ struct ThirdScreen: View {
         VStack {
             HStack {
                 Text("Netrork Name: ").font(.title)
-                Text(networkManager.name ?? "No data")
+                Text(networkManager.name ?? "No data") // Came from 1st to 3rd screen
             }
             
             HStack {
                 Text("Phone Type: ").font(.title)
-                Text(networkManager.type ?? "No Type")
+                Text(networkManager.type ?? "No Type") // Came from 1st to 3rd screen 
             }
         }
     }

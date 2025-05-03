@@ -13,7 +13,7 @@ struct SecondScreen: View {
     
     var body: some View {
         Text("Second Screen")
-        Text(networkManager.name ?? "No data")
+        Text(networkManager.name ?? "No data") // Came from 1st screen 
         
         NavigationLink("Third Screen", destination: ThirdScreen())
     }
