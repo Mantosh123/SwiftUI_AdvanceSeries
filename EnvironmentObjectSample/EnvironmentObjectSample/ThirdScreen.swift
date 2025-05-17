@@ -12,19 +12,12 @@ struct ThirdScreen: View {
     @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
-        Text("Second Screen")
-        
-        VStack {
-            HStack {
-                Text("Netrork Name: ").font(.title)
-                Text(networkManager.name ?? "No data") // Came from 1st to 3rd screen
+        NavigationStack {
+            VStack {
+                Text(networkManager.name ?? "No data")
+                Text("Count in View: \(networkManager.count)")
             }
-            
-            HStack {
-                Text("Phone Type: ").font(.title)
-                Text(networkManager.type ?? "No Type") // Came from 1st to 3rd screen 
-            }
-        }
+        }.navigationTitle("Third Screen")
     }
 }
 

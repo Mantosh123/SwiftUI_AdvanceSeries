@@ -20,8 +20,14 @@ struct ContentView: View {
                     .foregroundStyle(.tint)
                 
                 Text(networkManager.name ?? "s/s")
+                Text("Count in View: \(networkManager.count)")
+
                 NavigationLink("Go to Second View") {
                     SecondScreen()
+                }
+                
+                Button("Start value count") {
+                    networkManager.startTimer()
                 }
             }
             .navigationTitle("Environment Object")
@@ -35,3 +41,47 @@ struct ContentView: View {
     ContentView()
 }
 
+
+//import SwiftUI
+//import Combine
+//
+//struct ContentView: View {
+//    @State private var count = 0
+//    @State private var timerCancellable: AnyCancellable?
+//
+//    var body: some View {
+//        VStack(spacing: 20) {
+//            Text("Count: \(count)")
+//                .font(.largeTitle)
+//            
+//            Button("Start Timer") {
+//                startTimer()
+//            }
+//
+//            Button("Stop Timer") {
+//                stopTimer()
+//            }
+//        }
+//        .onDisappear {
+//            stopTimer() // Clean up
+//        }
+//        .padding()
+//    }
+//
+//    func startTimer() {
+//        // Prevent multiple timers
+//        if timerCancellable != nil { return }
+//        
+//        timerCancellable = Timer
+//            .publish(every: 5.0, on: .main, in: .common)
+//            .autoconnect()
+//            .sink { _ in
+//                count += 1
+//            }
+//    }
+//
+//    func stopTimer() {
+//        timerCancellable?.cancel()
+//        timerCancellable = nil
+//    }
+//}

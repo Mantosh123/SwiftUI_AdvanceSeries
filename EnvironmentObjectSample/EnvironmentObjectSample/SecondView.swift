@@ -12,10 +12,17 @@ struct SecondScreen: View {
     @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
-        Text("Second Screen")
-        Text(networkManager.name ?? "No data") // Came from 1st screen 
         
-        NavigationLink("Third Screen", destination: ThirdScreen())
+        NavigationStack {
+            
+            VStack {
+                Text(networkManager.name ?? "No data")
+                Text("Count in second View: \(networkManager.count)")
+                NavigationLink(" Go to third Screen", destination: ThirdScreen())
+
+            }.navigationTitle("Second Screen")
+        }
+        
     }
 }
 
